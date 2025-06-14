@@ -1,0 +1,29 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    overflow: hidden; /* Menghindari scroll pada body */
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    overflow-y: auto; /* Scroll vertikal */
+    scroll-snap-type: y mandatory;
+}
+
+.page-section {
+    flex-shrink: 0;
+    height: 100vh; /* Setiap bagian halaman akan memiliki tinggi 100% dari viewport */
+    scroll-snap-align: start;
+    padding: 20px; /* Opsional: menambah padding agar konten tidak terlalu rapat */
+}
+
+.page-section h1, .page-section p {
+    margin: 0;
+    padding: 10px;
+    font-family: Arial, sans-serif;
+}
+
+/* Kamu bisa menambahkan gaya tambahan untuk tampilan */

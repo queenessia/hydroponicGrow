@@ -1,0 +1,417 @@
+/* ====== 1. Font ====== */
+.amita-regular {
+    font-family: "Amita", serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.amita-bold {
+    font-family: "Amita", serif;
+    font-weight: 700;
+    font-style: normal;
+}
+
+/* ====== 2. Reset Dasar ====== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* ====== 3. Body Layout ====== */
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    background-color: white;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    min-height: 100vh;
+    margin: 0;
+    padding: 0;
+}
+
+/* ====== 4. Navbar ====== */
+
+/* ====== 5. Hero Section ====== */
+.hero-container {
+    width: 100vw;
+    margin: 80px 0 0 0; /* Menambahkan jarak 80px dari atas */
+    padding: 10px 0;
+    box-sizing: border-box;
+    background-image: url('/image/bg homepage.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: relative;
+    color: white;
+}
+
+.hero-container::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1;
+}
+
+.hero-container * {
+    color: white !important;
+    text-shadow: none !important;
+}
+
+.hero {
+    max-width: 1200px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 40px 20px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-size: cover;
+    background-position: center;
+    min-height: 50vh;
+    text-align: center;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+}
+
+.hero-content h1 {
+    font-size: 2.5rem;
+    margin: 0 0 20px 0;
+    color: white;
+    line-height: 1.2;
+}
+
+.hero-content p {
+    font-size: 1.25rem;
+    font-weight: bold;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
+    padding: 15px;
+    margin: 15px auto;
+    max-width: 800px;
+    line-height: 1.4;
+}
+
+.hero-content p:first-of-type {
+    font-size: 1.375rem;
+    margin-top: 20px;
+}
+
+.hero-button {
+    background-color: transparent;
+    color: white;
+    padding: 12px 25px;
+    border: 2px solid white;
+    cursor: pointer;
+    border-radius: 15px;
+    margin: 15px 0 25px;
+    font-size: 1.25rem;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    display: inline-block;
+}
+
+.hero-button:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+    transform: scale(1.05);
+}
+
+/* ====== 7. Main Content ====== */
+.main-container {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    box-sizing: border-box;
+    margin: 10px auto;
+}
+
+.content {
+    max-width: 1200px;
+    width: 95%;
+    margin: 100px auto;
+    text-align: center;
+    padding: 60px 40px;
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.intro-text {
+    font-size: 1.125rem;
+    color: black;
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+h2 {
+    font-size: 1.25rem;
+    margin: 15px 0 35px 15px;
+    text-align: left;
+    text-decoration: underline;
+}
+
+p {
+    max-width: 600px;
+    margin: 0 auto 10px;
+    text-align: center;
+    color: black;
+    line-height: 1.6;
+}
+
+/* ====== 8. Cards ====== */
+.card-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    background-color: #ffffff;
+    padding: 20px 0;
+}
+
+.card {
+    background: #d8e4bc;
+    position: relative;
+    padding: 20px;
+    min-height: 200px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+    text-align: start;
+    display: flex;
+    flex-direction: column;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+.card h3 {
+    margin-bottom: 10px;
+    font-size: 1.1rem;
+}
+
+.card button {
+    background: #4CAF50;
+    color: white;
+    border: none;
+    padding: 8px 15px;
+    margin-top: auto;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 0.9rem;
+}
+
+.icon-card {
+    width: 24px;
+    height: 24px;
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    margin-bottom: 7px;
+}
+
+.text-card {
+    font-size: 1rem;
+    color: black;
+    flex-grow: 1;
+    margin-bottom: 15px;
+}
+
+/* ====== 9. Tombol Khusus ====== */
+.button-card {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: white;
+    text-decoration: none;
+    border-radius: 20px;
+    text-align: center;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.button-card:hover,
+.button-card:focus,
+.button-card:active {
+    background-color: #45a049;
+    transform: none;
+    box-shadow: none;
+    text-decoration: none;
+}
+
+/* ====== 10. Page Transition ====== */
+.page-transition {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #C0DE7B;
+    z-index: 9999;
+    transform: translateX(100%);
+    pointer-events: none;
+}
+
+/* ====== 11. Media Queries untuk Responsivitas ====== */
+
+/* Tablet (768px ke bawah) */
+@media screen and (max-width: 768px) {
+    .hero-container {
+        margin-top: 60px;
+    }
+    
+    .hero {
+        padding: 30px 15px;
+        min-height: 40vh;
+    }
+    
+    .hero-content h1 {
+        font-size: 2rem;
+    }
+    
+    .hero-content p {
+        font-size: 1.1rem;
+        padding: 10px;
+    }
+    
+    .hero-content p:first-of-type {
+        font-size: 1.2rem;
+    }
+    
+    .hero-button {
+        font-size: 1.1rem;
+        padding: 10px 20px;
+    }
+    
+    .content {
+        width: 90%;
+        padding: 40px 25px;
+        margin: 60px auto;
+    }
+    
+    .card-container {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 15px;
+    }
+    
+    .card {
+        padding: 15px;
+        min-height: 180px;
+    }
+    
+    h2 {
+        font-size: 1.1rem;
+        margin-left: 0;
+        text-align: center;
+    }
+}
+
+/* Mobile (480px ke bawah) */
+@media screen and (max-width: 480px) {
+    .hero-container {
+        margin-top: 40px;
+    }
+    
+    .hero {
+        padding: 20px 10px;
+        min-height: 35vh;
+    }
+    
+    .hero-content h1 {
+        font-size: 1.75rem;
+        margin-bottom: 15px;
+    }
+    
+    .hero-content p {
+        font-size: 1rem;
+        padding: 8px;
+        margin: 10px auto;
+    }
+    
+    .hero-content p:first-of-type {
+        font-size: 1.1rem;
+        margin-top: 15px;
+    }
+    
+    .hero-button {
+        font-size: 1rem;
+        padding: 8px 16px;
+        margin: 10px 0 20px;
+    }
+    
+    .content {
+        width: 95%;
+        padding: 30px 20px;
+        margin: 40px auto;
+    }
+    
+    .intro-text {
+        font-size: 1rem;
+    }
+    
+    .card-container {
+        grid-template-columns: 1fr;
+        gap: 12px;
+        padding: 15px 0;
+    }
+    
+    .card {
+        padding: 12px;
+        min-height: 160px;
+    }
+    
+    .card h3 {
+        font-size: 1rem;
+    }
+    
+    .text-card {
+        font-size: 0.9rem;
+    }
+    
+    .card button {
+        padding: 6px 12px;
+        font-size: 0.8rem;
+    }
+    
+    h2 {
+        font-size: 1rem;
+    }
+}
+
+/* Mobile kecil (320px ke bawah) */
+@media screen and (max-width: 320px) {
+    .hero-container {
+        margin-top: 30px;
+    }
+    
+    .hero-content h1 {
+        font-size: 1.5rem;
+    }
+    
+    .hero-content p {
+        font-size: 0.9rem;
+    }
+    
+    .hero-content p:first-of-type {
+        font-size: 1rem;
+    }
+    
+    .content {
+        padding: 25px 15px;
+    }
+    
+    .card {
+        padding: 10px;
+        min-height: 140px;
+    }
+}

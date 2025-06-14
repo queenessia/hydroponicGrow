@@ -1,0 +1,446 @@
+/* ====== 1. BASE STYLES ====== */
+
+
+/* ====== 2. FONT STYLES ====== */
+.amita-regular {
+    font-family: "Amita", serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.amita-bold {
+    font-family: "Amita", serif;
+    font-weight: 700;
+    font-style: normal;
+}
+
+/* ====== 3. NAVIGATION BAR ====== */
+
+/* ====== 4. BACKGROUND ELEMENTS ====== */
+
+
+/* ====== 5. SEARCH COMPONENT ====== */
+.search-container {
+    margin: 0px auto 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 90%;
+    max-width: 400px;
+    background: white;
+    border-radius: 25px;
+    padding: 5px 15px;
+    border: 2px solid #ccc;
+    z-index: 10;
+}
+
+.search-bar {
+    flex: 1;
+    padding: 10px;
+    border: none;
+    border-radius: 25px;
+    font-size: 16px;
+    outline: none;
+}
+
+.search-icon {
+    font-size: 18px;
+    color: #777;
+    cursor: pointer;
+}
+
+/* ====== 6. ARTICLE SECTION ====== */
+.selected-article {
+    margin: 10px auto;
+    font-size: 32px;
+    font-weight: bold;
+    color: black;
+    text-align: center;
+    width: 90%;
+    max-width: 1200px;
+    padding: 0;
+}
+
+.sub-text {
+    margin: 10px auto 30px;
+    font-size: 18px;
+    font-weight: normal;
+    color: black;
+    width: 90%;
+    max-width: 1200px;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    gap: 20px;
+}
+
+.scroll-icons {
+    display: flex;
+    gap: 10px;
+}
+
+.scroll-icons i {
+    font-size: 20px;
+    color: #3A7F0D;
+    cursor: pointer;
+    transition: color 0.3s;
+}
+
+.scroll-icons i:hover {
+    color: #2A4E17;
+}
+
+.article-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-auto-rows: 1fr;
+    gap: 25px;
+    width: 90%;
+    max-width: 1200px;
+    margin: 5px auto 60px; /* Added 60px bottom margin */
+}
+
+.article-card {
+    background-color: #C0DE7B;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+    display: flex;
+    flex-direction: column;
+}
+
+.article-card:hover {
+    transform: scale(1.05);
+}
+
+.article-image {
+    width: 100%;
+    height: 100px;
+    object-fit: cover;
+    cursor: pointer;
+}
+
+.article-details {
+    padding: 10px;
+    color: black;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.publish-date {
+    font-size: 10px;
+    color: black;
+    margin-bottom: 5px;
+}
+
+.article-title {
+    font-size: 14px;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.article-source {
+    font-size: 10px;
+    color: black;
+    margin-bottom: 5px;
+}
+
+.article-excerpt {
+    font-size: 10px;
+    color: black;
+    text-align: left;
+    line-height: 1.4;
+    flex: 1;
+    overflow: hidden;
+}
+
+/* ====== 7. PAGE TRANSITION ====== */
+.page-transition {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 9999;
+    transform: translateX(100%);
+    pointer-events: none;
+}
+
+/* Additional styles for scrollbar - tidak mengubah existing styles */
+.articles-container {
+    display: flex;
+    width: 90%;
+    max-width: 1200px;
+    margin: 30px auto 80px; /* Increased bottom margin from 40px to 80px */
+    gap: 20px;
+    align-items: flex-start;
+}
+
+.article-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    gap: 25px;
+    flex: 1;
+}
+
+/* Enhanced article card styling with improved thumbnail spacing */
+.article-card {
+    border: 1px solid #006400 !important; /* Strong orange-yellow border */
+    min-height: 280px !important;
+    transition: transform 0.3s ease, box-shadow 0.3s ease !important;
+    background-color: #a0b179 !important; /* Cornsilk background with orange tint */
+    border-radius: 8px !important;
+    overflow: hidden !important;
+    display: flex !important;
+    flex-direction: column !important;
+}
+
+.article-card:hover {
+    box-shadow: 0 8px 16px rgba(255, 140, 0, 0.4) !important; /* Orange shadow on hover */
+    border-color: #006400 !important; /* Brighter orange on hover */
+}
+
+/* Improved thumbnail styling with proper spacing */
+.article-image {
+    width: 100% !important;
+    height: 140px !important;
+    object-fit: cover !important;
+    margin: 12px 12px 8px 12px !important; /* Top, right, bottom, left margins */
+    width: calc(100% - 24px) !important; /* Adjust width to account for margins */
+    border-radius: 6px !important;
+    background-color: #F5F5DC !important; /* Beige background for loading */
+}
+
+/* Article details container with proper spacing */
+.article-details {
+    padding: 8px 12px 12px 12px !important;
+    flex: 1 !important;
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 6px !important;
+}
+
+.article-title {
+    font-size: 16px !important;
+    font-weight: bold !important;
+    line-height: 1.3 !important;
+    margin-bottom: 4px !important;
+    color: #F5F5DC !important; /* Dark green for title */
+}
+
+.article-excerpt {
+    font-size: 12px !important;
+    line-height: 1.5 !important;
+    color: #F5F5DC  !important; /* Olive green for text */
+    flex: 1 !important;
+}
+
+.publish-date {
+    font-size: 11px !important;
+    color: #2F4F2F !important; /* Strong orange-yellow for date */
+    font-weight: 500 !important;
+}
+
+.article-source {
+    font-size: 11px !important;
+    color: #2F4F2F !important; /* Goldenrod for source */
+    font-weight: 500 !important;
+}
+
+/* Custom scrollbar with yellow-green theme */
+.scroll-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    justify-self: center;
+    align-self: center;
+}
+
+.scroll-track {
+    width: 20px;
+    height: 600px;
+    background-color: #F0F8E8; /* Light green background */
+    border-radius: 10px;
+    position: relative;
+    cursor: pointer;
+    border: 1px solid #E6F3E6; /* Very light green border */
+}
+
+.scroll-thumb {
+    width: 18px;
+    height: 60px;
+    background-color: #FFdb58; /* Strong orange-yellow */
+    border-radius: 9px;
+    position: absolute;
+    top: 0;
+    left: 1px;
+    cursor: grab;
+    transition: background-color 0.3s;
+}
+
+.scroll-thumb:hover {
+    background-color: #FFdb58; /* Brighter orange on hover */
+}
+
+.scroll-thumb:active {
+    cursor: grabbing;
+    background-color: #FFdb58; /* Darker orange when active */
+}
+
+.scroll-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.scroll-btn {
+    width: 30px;
+    height: 30px;
+    background-color: #ffdb58; /* Strong orange-yellow */
+    color: black;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.3s;
+}
+
+.scroll-btn:hover {
+    background-color: #FFdb58; /* Brighter orange on hover */
+}
+
+/* Loading and error states */
+.loading-spinner {
+    grid-column: 1 / -1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px;
+    color: #FFdb58; /* Orange for loading */
+}
+
+.error-message, .no-articles {
+    grid-column: 1 / -1;
+    text-align: center;
+    padding: 40px;
+    color: #DAA520; /* Goldenrod for messages */
+    font-size: 16px;
+}
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+    .article-grid {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+@media (max-width: 992px) {
+    .article-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+    
+    .articles-container {
+        width: 95%;
+    }
+}
+
+@media (max-width: 768px) {
+    .articles-container {
+        flex-direction: column;
+        margin: 20px auto 60px; /* Increased bottom margin for mobile */
+    }
+    
+    .article-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .scroll-container {
+        flex-direction: row;
+        width: 100%;
+        justify-content: center;
+    }
+    
+    .scroll-track {
+        width: 200px;
+        height: 20px;
+    }
+    
+    .scroll-thumb {
+        width: 40px;
+        height: 18px;
+        top: 1px;
+    }
+
+    .article-card {
+        min-height: 250px !important;
+    }
+
+    .article-title {
+        font-size: 14px !important;
+    }
+
+    .article-excerpt {
+        font-size: 11px !important;
+    }
+
+    .article-image {
+        height: 120px !important;
+        margin: 10px 10px 6px 10px !important;
+        width: calc(100% - 20px) !important;
+    }
+
+    /* Responsive adjustments for centered text */
+    .selected-article {
+        font-size: 28px;
+    }
+
+    .sub-text {
+        font-size: 16px;
+        flex-direction: column;
+        gap: 15px;
+    }
+}
+
+@media (max-width: 576px) {
+    .article-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+        margin: 5px auto 50px; /* Bottom margin for small screens */
+    }
+    
+    .articles-container {
+        width: 98%;
+        margin: 15px auto 50px; /* Increased bottom margin for small screens */
+    }
+
+    .article-card {
+        min-height: 220px !important;
+    }
+
+    .article-image {
+        height: 100px !important;
+        margin: 8px 8px 4px 8px !important;
+        width: calc(100% - 16px) !important;
+    }
+
+    .article-details {
+        padding: 6px 8px 8px 8px !important;
+    }
+
+    /* Small screen adjustments for centered text */
+    .selected-article {
+        font-size: 24px;
+    }
+
+    .sub-text {
+        font-size: 14px;
+    }
+}

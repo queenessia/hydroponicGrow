@@ -1,0 +1,887 @@
+.amita-regular {
+    font-family: "Amita", serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.amita-bold {
+    font-family: "Amita", serif;
+    font-weight: 700;
+    font-style: normal;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+
+body {
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   min-height: 100vh;
+   background-color: #f3efea; /* Tambahkan background sama dengan navbar */
+   background-size: cover;
+   background-position: center;
+   background-repeat: no-repeat;
+   color: #333;
+}
+
+/* Navbar Transparan - Updated background */
+.transparent-nav {
+    position: fixed;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 70px;
+    top: 0;
+    left: 0;
+    padding: 15px 40px;
+    font-weight: bold;
+    background-color: #f3efea; /* Solid background without transparency */
+    z-index: 1000;
+    border: none;
+    margin: 0;
+    box-shadow: none;
+}
+
+
+.container {
+    display: flex;
+    width: 100%;
+    height: 100vh; /* Changed from calc(100vh - 70px) to 100vh */
+    margin-top: 70px; /* Add margin to push content below navbar */
+}
+
+.left-side {
+    flex: 1; /* 1/4 bagian */
+    background-color: #f3efea; /* Changed from white to #f3efea */
+    border-right: 1px solid #000; /* Garis hitam tipis pemisah */
+    padding: 20px;
+    overflow: hidden; /* Tidak bisa scroll */
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; /* Rata kiri untuk konten di dalamnya */
+    color: #3A7F0D; /* Warna teks di bagian kiri */
+    gap: 20px; /* Jarak antara elemen di dalam .left-side */
+}
+
+.profile-section {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+    width: 100%; /* Lebar penuh */
+}
+
+.profile-pic {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+.username {
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.left-side-item {
+    display: flex;
+    align-items: center;
+    gap: 10px; /* Jarak antara ikon dan teks */
+    font-size: 18px; /* Ukuran font sama seperti username */
+    font-weight: bold; /* Tebal seperti username */
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer; /* Ubah kursor menjadi pointer saat dihover */
+    transition: background-color 0.3s; /* Animasi saat dihover atau diklik */
+}
+
+.left-side-item:hover {
+    background-color: #f0f0f0; /* Warna latar belakang saat dihover */
+}
+
+.left-side-item:active {
+    background-color: #ddd; /* Warna latar belakang saat diklik */
+}
+
+.left-side-item i {
+    font-size: 24px; /* Perbesar ikon */
+}
+
+.post-button {
+    display: flex;
+    align-items: center;
+    justify-content: center; /* Posisi center */
+    gap: 10px; /* Jarak antara ikon dan teks */
+    background-color: #3A7F0D; /* Warna background */
+    color: white; /* Warna teks dan ikon */
+    padding: 10px 20px; /* Padding untuk ukuran tombol */
+    border-radius: 25px; /* Rounded corners */
+    font-size: 18px; /* Ukuran font */
+    font-weight: bold; /* Tebal seperti username */
+    width: 100%; /* Lebar penuh */
+    box-sizing: border-box; /* Pastikan padding tidak mempengaruhi lebar */
+    cursor: pointer; /* Ubah kursor saat dihovered */
+    transition: background-color 0.3s; /* Animasi saat dihovered */
+}
+
+.post-button:hover {
+    background-color: #2a5d07; /* Warna background saat dihovered */
+}
+
+.right-side {
+    flex: 3; /* 3/4 bagian */
+    background-color: #f3efea; /* Background putih untuk bagian kanan */
+    padding: 20px;
+    overflow-y: auto; /* Scrollable */
+    color: #000; /* Warna teks di bagian kanan tetap hitam */
+}
+
+.share-experience {
+    font-size: 24px;
+    font-weight: bold;
+    color: #396929;
+    border-bottom: 2px solid #396929; /* Garis pembatas */
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+}
+
+.post {
+    background: white !important; /* Changed from #f3efea to white */
+    margin-bottom: 20px;
+    padding: 20px;
+    border-radius: 12px;
+    border-bottom: 1px solid #396929; /* Garis hitam tipis pemisah antar postingan */
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.post:last-child {
+    border-bottom: none; /* Hapus garis di postingan terakhir */
+}
+
+.post-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.post-content {
+    margin-left: 50px; /* Memberi jarak untuk konten postingan */
+}
+
+.post-images {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px; /* Jarak antar gambar */
+    margin-top: 10px;
+}
+
+.post-images img {
+    width: 50px; /* Ukuran gambar kecil */
+    height: 50px;
+    object-fit: cover;
+    border-radius: 5px;
+}
+
+.extra-images {
+    position: relative;
+    width: 50px;
+    height: 50px;
+}
+
+.extra-images::after {
+    content: "+5"; /* Tulisan +X */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgba(0, 0, 0, 0.7);
+    color: white;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 12px;
+}
+
+.post-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 15px;
+    margin-top: 10px;
+}
+
+.post-actions i {
+    cursor: pointer;
+    font-size: 18px;
+    color: #333;
+    transition: color 0.3s;
+}
+
+.post-actions i:hover {
+    color: #3A7F0D;
+}
+
+/* Responsive Styles */
+@media (max-width: 1200px) {
+    .nav-links {
+        gap: 100px;
+    }
+}
+
+@media (max-width: 992px) {
+    .nav-links {
+        gap: 60px;
+    }
+    
+    .logo-container {
+        margin-right: 80px;
+    }
+}
+
+@media (max-width: 768px) {
+    .transparent-nav {
+        padding: 15px 20px;
+        justify-content: space-between;
+    }
+    
+    .logo-container {
+        margin-right: 0;
+    }
+    
+    .nav-links {
+        gap: 30px;
+    }
+    
+    .brand-name {
+        font-size: 20px;
+    }
+    
+    .container {
+        flex-direction: column;
+    }
+    
+    .left-side, .right-side {
+        flex: none;
+        width: 100%;
+        border-right: none;
+        border-bottom: 1px solid #000; /* Garis hitam tipis pemisah untuk mobile */
+    }
+    
+    .post-content {
+        margin-left: 0; /* Hilangkan margin di mobile */
+    }
+}
+
+@media (max-width: 576px) {
+    .transparent-nav {
+        flex-direction: column;
+        height: auto;
+        padding: 15px;
+    }
+    
+    .logo-container {
+        margin-bottom: 15px;
+        margin-right: 0;
+    }
+    
+    .nav-links {
+        gap: 20px;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+}
+.page-transition {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #C0DE7B;
+    z-index: 9999;
+    transform: translateX(100%);
+    pointer-events: none;
+    display: none; /* Awalnya disembunyikan */
+}
+
+/* Modal Styles */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0,0,0,0.4);
+        }
+
+        .modal-content {
+            background-color: #fefefe;
+            margin: 5% auto;
+            padding: 20px;
+            border: none;
+            border-radius: 12px;
+            width: 90%;
+            max-width: 500px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .close {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .close:hover,
+        .close:focus {
+            color: black;
+            text-decoration: none;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: 500;
+        }
+
+        .form-group textarea {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            resize: vertical;
+            min-height: 100px;
+            font-family: inherit;
+            box-sizing: border-box;
+        }
+
+        .form-group input[type="file"] {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            box-sizing: border-box;
+        }
+
+        .submit-btn {
+            background: linear-gradient(135deg, #3A7F0D 0%, #3A7F0D 100%);
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 16px;
+            width: 100%;
+            transition: opacity 0.3s ease;
+        }
+
+        .submit-btn:hover {
+            opacity: 0.9;
+        }
+
+        .submit-btn:disabled {
+            opacity: 0.6;
+            cursor: not-allowed;
+        }
+
+        .loading {
+            display: none;
+            text-align: center;
+            padding: 20px;
+        }
+
+        .spinner {
+            border: 3px solid #f3f3f3;
+            border-top: 3px solid #3A7F0D;
+            border-radius: 50%;
+            width: 30px;
+            height: 30px;
+            animation: spin 1s linear infinite;
+            margin: 0 auto;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        /* Post Styles - Updated with new background color */
+        .post {
+            background: white !important; /* Changed from #f3efea to white */
+            border-radius: 12px;
+            padding: 20px;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .post-header {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 15px;
+        }
+
+        .post-author-pic {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+
+        .post-author-info h4 {
+            margin: 0;
+            font-size: 1.1rem;
+        }
+
+        .post-content {
+            margin-bottom: 15px;
+            line-height: 1.6;
+        }
+
+        .post-image {
+            width: 100%;
+            max-width: 500px;
+            height: auto;
+            border-radius: 8px;
+            margin: 10px 0;
+        }
+
+        .post-actions {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            padding-top: 15px;
+            border-top: 1px solid #eee;
+        }
+
+        .post-actions i {
+            font-size: 18px;
+            cursor: pointer;
+            color: #666;
+            transition: color 0.3s ease;
+        }
+
+        .post-actions i:hover {
+            color: #3A7F0D;
+        }
+
+        .post-actions i.liked {
+            color: #3A7F0D;
+        }
+
+        .post-actions i.bookmarked {
+            color: #3A7F0D;
+        }
+
+        .post-stats {
+            margin-top: 10px;
+            font-size: 14px;
+            color: #666;
+        }
+
+        .post-date {
+            font-size: 12px;
+            color: #999;
+            margin-top: 5px;
+        }
+
+        .alert {
+            padding: 12px;
+            margin-bottom: 15px;
+            border-radius: 8px;
+            display: none;
+        }
+
+        .alert.success {
+            background-color: #d4edda;
+            color: #155724;
+            border: 1px solid #c3e6cb;
+        }
+
+        .alert.error {
+            background-color: #f8d7da;
+            color: #721c24;
+            border: 1px solid #f5c6cb;
+        }
+
+        .pagination {
+            text-align: center;
+            margin-top: 30px;
+        }
+
+        .pagination button {
+            background: #3A7F0D;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            margin: 0 5px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .pagination button:disabled {
+            background: #ccc;
+            cursor: not-allowed;
+        }
+
+        /* Empty state */
+        .empty-state {
+            background: #f8f9ff;
+            border: 2px dashed #3A7F0D;
+            text-align: center;
+            padding: 40px;
+            color: #3A7F0D;
+            font-style: italic;
+            border-radius: 12px;
+        }
+
+        
+
+        /* Modal Styles */
+        .modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            display: none;
+            justify-content: center;
+            align-items: center;
+            z-index: 10000;
+            animation: fadeIn 0.3s ease;
+        }
+
+        .modal-overlay.active {
+            display: flex !important;
+        }
+
+        .modal-content {
+            background: white;
+            border-radius: 15px;
+            padding: 30px;
+            max-width: 500px;
+            width: 90%;
+            max-height: 80vh;
+            overflow-y: auto;
+            position: relative;
+            animation: slideUp 0.3s ease;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes slideUp {
+            from { transform: translateY(50px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+
+        .modal-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 25px;
+            padding-bottom: 15px;
+            border-bottom: 1px solid #e1e5e9;
+        }
+
+        .modal-header h3 {
+            margin: 0;
+            color: #333;
+            font-size: 20px;
+            font-weight: 600;
+        }
+
+        .close-modal {
+            background: none;
+            border: none;
+            font-size: 24px;
+            color: #666;
+            cursor: pointer;
+            padding: 5px;
+            line-height: 1;
+        }
+
+        .close-modal:hover {
+            color: #333;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 500;
+            color: #333;
+            font-size: 14px;
+        }
+
+        .form-textarea {
+            width: 100%;
+            min-height: 120px;
+            padding: 15px;
+            border: 2px solid #e1e5e9;
+            border-radius: 10px;
+            font-size: 14px;
+            font-family: inherit;
+            resize: vertical;
+            transition: border-color 0.3s ease;
+            box-sizing: border-box;
+        }
+
+        .form-textarea:focus {
+            outline: none;
+            border-color: #3A7F0D;
+            box-shadow: 0 0 0 3px rgba(58, 127, 13, 0.1);
+        }
+
+        .file-input-container {
+            position: relative;
+            display: inline-block;
+            width: 100%;
+        }
+
+        .file-input {
+            position: absolute;
+            opacity: 0;
+            width: 100%;
+            height: 100%;
+            cursor: pointer;
+        }
+
+        .file-input-label {
+            display: block;
+            padding: 15px;
+            border: 2px dashed #3A7F0D;
+            border-radius: 10px;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            background: #f8fff8;
+        }
+
+        .file-input-label:hover {
+            background: #f0fff0;
+            border-color: #3A7F0D;
+        }
+
+        .file-input-label i {
+            font-size: 24px;
+            color: #3A7F0D;
+            margin-bottom: 10px;
+            display: block;
+        }
+
+        .form-actions {
+            display: flex;
+            gap: 15px;
+            justify-content: flex-end;
+            margin-top: 30px;
+        }
+
+        .btn {
+            padding: 12px 25px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 14px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .btn-cancel {
+            background: #95a5a6;
+            color: white;
+        }
+
+        .btn-cancel:hover {
+            background: #7f8c8d;
+            transform: translateY(-2px);
+        }
+
+        .btn-submit {
+            background: linear-gradient(135deg, #3A7F0D 0%, #3A7F0D 100%);
+            color: white;
+        }
+
+        .btn-submit:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(58, 127, 13, 0.4);
+        }
+
+        .btn-submit:disabled {
+            opacity: 0.6;
+            cursor: not-allowed;
+            transform: none;
+        }
+
+        .image-preview {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 15px;
+        }
+
+        .preview-item {
+            position: relative;
+            width: 80px;
+            height: 80px;
+        }
+
+        .preview-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 8px;
+            border: 2px solid #e1e5e9;
+        }
+
+        .remove-image {
+            position: absolute;
+            top: -8px;
+            right: -8px;
+            background: #e74c3c;
+            color: white;
+            border: none;
+            border-radius: 50%;
+            width: 20px;
+            height: 20px;
+            font-size: 12px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .loading-spinner {
+            display: inline-block;
+            width: 16px;
+            height: 16px;
+            border: 2px solid #f3f3f3;
+            border-top: 2px solid #3A7F0D;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        .alert {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            padding: 15px 20px;
+            border-radius: 8px;
+            z-index: 10001;
+            font-weight: 500;
+            animation: slideInRight 0.3s ease;
+            max-width: 300px;
+        }
+
+        .alert-success {
+            background: #d4edda;
+            color: #155724;
+            border: 1px solid #c3e6cb;
+        }
+
+        .alert-error {
+            background: #f8d7da;
+            color: #721c24;
+            border: 1px solid #f5c6cb;
+        }
+
+        @keyframes slideInRight {
+            from { transform: translateX(100%); opacity: 0; }
+            to { transform: translateX(0); opacity: 1; }
+        }
+
+        .no-posts {
+            text-align: center;
+            padding: 60px 20px;
+            color: #666;
+            font-style: italic;
+            background: white; /* Changed from #f3efea to white */
+            border-radius: 15px;
+            margin: 20px 0;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .posts-loading {
+            text-align: center;
+            padding: 40px;
+            color: #3A7F0D;
+            background: white; /* Changed from #f3efea to white */
+            border-radius: 15px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .posts-error {
+            text-align: center;
+            padding: 40px;
+            color: #e74c3c;
+            background: #fee;
+            border-radius: 15px;
+            margin: 20px 0;
+        }
+
+        /* Loading states */
+        .posts-loading i {
+            font-size: 24px;
+            margin-bottom: 15px;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .container {
+                flex-direction: column;
+                gap: 20px;
+                padding: 10px;
+            }
+            
+            .left-side {
+                width: 100%;
+                position: static;
+                order: 2;
+            }
+            
+            .right-side {
+                order: 1;
+            }
+            
+            .modal-content {
+                width: 95%;
+                margin: 20px;
+                padding: 20px;
+            }
+            
+            .post {
+                padding: 20px;
+            }
+            
+            .post-actions {
+                gap: 15px;
+            }
+
+            .nav-links {
+                display: none;
+            }
+        }
